@@ -87,26 +87,65 @@ canvas.on('mouse:wheel', function (opt) {
    }
 });
 
-function removeobj(){
+function removeobj() {
    var object = canvas.getActiveObject();
-   if (!object){
-       alert('Please select the element to remove');
-       return '';
+   if (!object) {
+      alert('Please select the element to remove');
+      return '';
    }
    canvas.remove(object);
 }
-var c=document.getElementById("canvas");
-var ctx=c.getContext("2d");
+var c = document.getElementById("canvas");
+var ctx = c.getContext("2d");
 ctx.beginPath();
-ctx.arc(100,75,50,0,2*Math.PI);
+ctx.arc(100, 75, 50, 0, 2 * Math.PI);
 ctx.stroke();
 
-function download_image(){
-  var canvas = document.getElementById("canvas");
-  image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-  var link = document.createElement('a');
-  link.download = "my-image.png";
-  link.href = image;
-  link.click();
+function download_image() {
+   var cc = document.getElementById("canvas");
+   image = cc.toDataURL("image/png").replace("image/png", "image/octet-stream");
+   var link = document.createElement('a');
+   link.download = "my-image.png";
+   link.href = image;
+   link.click();
+}
+
+function square() {
+   var square = new fabric.Rect({
+      width: 100,
+      height: 100,
+      fill: '',
+      stroke: 'black',
+      strokeWidth: 3
+   });
+   canvas.add(square);
+   canvas.centerObject(square);
+
+}
+
+function circle() {
+
+   var circle = new fabric.Circle({
+      radius: 50,
+      fill: '',
+      stroke: 'black',
+      strokeWidth: 3
+   });
+   canvas.add(circle);
+   canvas.centerObject(circle);
+
+}
+
+function triangle() {
+   var triangle = new fabric.Triangle({
+      width: 150,
+      height: 100,
+      fill: '',
+      stroke: 'black',
+      strokeWidth: 3,
+      angle: 45,
+   });
+   canvas.add(triangle);
+   canvas.centerObject(triangle);
 }
 initialise('canvas');
