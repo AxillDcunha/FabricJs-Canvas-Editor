@@ -1,0 +1,78 @@
+canvas {
+
+  border: 5px solid rgb(0, 0, 0);
+  position: absolute;
+  display: block;
+}
+
+.canvas-container {
+
+
+}
+.container{
+    display: flex;
+    justify-content:space-around;
+}
+
+.options-buttons {
+  border: 5px solid rgb(0, 0, 0);
+  display: block;
+  margin-left: 40px;
+  height: auto ;
+  width: 300px;
+  padding-left: 10px;
+}
+
+#l{
+    border: 0px !important;
+}
+
+.header-top {
+  text-align: center;
+  font-size: larger;
+  margin: 0 auto;
+  width: 100vw;
+}
+
+.upim {
+    font-size: 25px;
+    margin: 3px;
+    margin-top: 5px;
+}
+
+button,input,svg{
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .container {
+      flex-direction: column;
+    }
+    .options-buttons{
+        margin-top: 60px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .lower-canvas {
+        width: 100% !important;
+        height: 100% !important;
+        position: relative !important;  
+        border: 2px solid rgb(255, 255, 255);
+    }
+    .upper-canvas {
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute !important;
+    }
+    .canvas-container {
+        width: 100% !important;
+        height: auto !important;
+    }
+  }
+  
+  
+ .download{
+    margin-top: 5px;
+ }
